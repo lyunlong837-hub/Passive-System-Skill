@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "passivesystemskill:skill_crystal"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  },
+  "result": [
+    {
+      "item": "passivesystemskill:skill_crystal_piece",
+      "count": 2
+    }
+  ]
+}

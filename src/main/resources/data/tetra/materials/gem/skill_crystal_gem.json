@@ -1,0 +1,33 @@
+{
+    "key": "skill_crystal",
+    "category": "gem",
+    "primary": 4,
+    "secondary": 1,
+    "tertiary": 0,
+    "durability": 250,
+    "integrityCost": 1,
+    "integrityGain": 1,
+    "magicCapacity": 105,
+    "toolLevel": "minecraft:diamond",
+    "toolEfficiency": 8,
+    "tints": {
+        "glyph": "00FF00",
+        "texture": "00FF00"
+    },
+        "effects": {
+        "criticalStrike": [30, 1.5]
+        },
+    "textures": [
+        "shiny",
+        "crude"
+    ],
+    "material": {
+        "items": [ "passivesystemskill:skill_crystal" ]
+    },
+    "improvements": {
+        "arrested": 0
+    },
+    "requiredTools": {
+        "hammer_dig": "minecraft:iron"
+    }
+}

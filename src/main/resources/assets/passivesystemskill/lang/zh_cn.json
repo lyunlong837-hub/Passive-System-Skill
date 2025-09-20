@@ -1,0 +1,61 @@
+{
+  "item.passivesystemskill.skill_crystal": "熟练度水晶",
+  "item.passivesystemskill.skill_crystal_piece": "整齐切开的熟练度水晶",
+  "item.passivesystemskill.ry_zwf": "荣誉占位符",
+  "item.passivesystemskill.ironspell_zwf": "铁魔法占位符 主节点",
+  "item.passivesystemskill.ironspell_zwfb": "铁魔法占位符 法术强度",
+
+
+
+	"tetra.material.skill_crystal": "熟练度水晶",
+	"tetra.material.skill_crystal.prefix": "熟练度水晶",
+	"tetra.improvement.sl_quality.name": "熟练锻造",
+	"tetra.improvement.sl_quality.description": "你对锻造非常熟悉，使得物品各项属性都提升了",
+
+
+  "itemGroup.passivesystemskill.pss_tab": "熟练度系统",
+  "key.passivesystemskill.open_skill_tree": "熟练度系统",
+  "enchantment.passivesystemskill.fasterexpget": "熟练专精",
+
+
+  "effect.passivesystemskill.fasterexpxg": "快速熟练",
+  "effect.passivesystemskill.pss_magic_power": "魔法造诣",
+
+  "item.minecraft.potion.effect.fasterexpxg": "快速熟练药水",
+  "item.minecraft.splash_potion.effect.fasterexpxg": "喷溅型快速熟练药水",
+  "item.minecraft.lingering_potion.effect.fasterexpxg": "滞留型快速熟练药水",
+  "item.minecraft.tipped_arrow.effect.fasterexpxg": "快速熟练之箭",
+
+  "item.minecraft.potion.effect.fasterexpxg_long": "快速熟练药水",
+  "item.minecraft.splash_potion.effect.fasterexpxg_long": "喷溅型快速熟练药水",
+  "item.minecraft.lingering_potion.effect.fasterexpxg_long": "滞留型快速熟练药水",
+  "item.minecraft.tipped_arrow.effect.fasterexpxg_long": "快速熟练之箭",
+
+  "item.minecraft.potion.effect.fasterexpxg_strong": "快速熟练药水",
+  "item.minecraft.splash_potion.effect.fasterexpxg_strong": "喷溅型快速熟练药水",
+  "item.minecraft.lingering_potion.effect.fasterexpxg_strong": "滞留型快速熟练药水",
+  "item.minecraft.tipped_arrow.effect.fasterexpxg_strong": "快速熟练之箭",
+
+
+
+
+  "skill.passivesystemskill.tongyong.desc1": "解锁后通过对应行为增加经验",
+
+  "skill.passivesystemskill.zd.desc1": "攻击力",
+  "skill.passivesystemskill.wakuang.desc1": "石制品挖掘速度",
+  "skill.passivesystemskill.famu.desc1": "木制品挖掘速度",
+  "skill.passivesystemskill.tizhi.desc1": "生命值",
+  "skill.passivesystemskill.minjie.desc1": "攻击速度",
+  "skill.passivesystemskill.zhongjia.desc1": "护甲值",
+  "skill.passivesystemskill.qinjia.desc1": "护甲韧性",
+
+
+  "skill.passivesystemskill.jinshen.desc1": "系统经验值加成",
+  "skill.passivesystemskill.dashi.desc1": "基础熟练度经验",
+
+  "skill.passivesystemskill.DiaoYu.desc1": "钓鱼获得经验值",
+  "skill.passivesystemskill.Zhongzhi.desc1": "收菜获得经验值"
+
+
+
+}

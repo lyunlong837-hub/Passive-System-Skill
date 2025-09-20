@@ -1,0 +1,82 @@
+[
+    {
+        "key": "sl_quality",
+        "level": 1,
+        "attributes": {
+            "**generic.attack_damage": 0.02,
+            "**tetra:draw_damage": 0.02,
+            "**tetra:ability_damage": 0.02
+        },
+        "tools": {
+            "axe_dig": [ 0, 3 ],
+            "shovel_dig": [ 0, 3 ],
+            "pickaxe_dig": [ 0, 3 ],
+            "hoe_dig": [ 0, 3 ],
+            "cut": [ 0, 3 ]
+        }
+    },
+    {
+        "key": "sl_quality",
+        "level": 2,
+        "attributes": {
+            "**generic.attack_damage": 0.04,
+            "**tetra:draw_damage": 0.04,
+            "**tetra:ability_damage": 0.04
+        },
+        "tools": {
+            "axe_dig": [ 0, 6 ],
+            "shovel_dig": [ 0, 6 ],
+            "pickaxe_dig": [ 0, 6 ],
+            "hoe_dig": [ 0, 6 ],
+            "cut": [ 0, 6 ]
+        }
+    },
+    {
+        "key": "sl_quality",
+        "level": 3,
+        "attributes": {
+            "**generic.attack_damage": 0.06,
+            "**tetra:draw_damage": 0.06,
+            "**tetra:ability_damage": 0.06
+        },
+        "tools": {
+            "axe_dig": [ 0, 8 ],
+            "shovel_dig": [ 0, 8 ],
+            "pickaxe_dig": [ 0, 8 ],
+            "hoe_dig": [ 0, 8 ],
+            "cut": [ 0, 8 ]
+        }
+    },
+    {
+        "key": "sl_quality",
+        "level": 4,
+        "attributes": {
+            "**generic.attack_damage": 0.08,
+            "**tetra:draw_damage": 0.08,
+            "**tetra:ability_damage": 0.08
+        },
+        "tools": {
+            "axe_dig": [ 0, 9 ],
+            "shovel_dig": [ 0, 9 ],
+            "pickaxe_dig": [ 0, 9 ],
+            "hoe_dig": [ 0, 9 ],
+            "cut": [ 0, 9 ]
+        }
+    },
+    {
+        "key": "sl_quality",
+        "level": 5,
+        "attributes": {
+            "**generic.attack_damage": 0.1,
+            "**tetra:draw_damage": 0.1,
+            "**tetra:ability_damage": 0.1
+        },
+        "tools": {
+            "axe_dig": [ 0, 10 ],
+            "shovel_dig": [ 0, 10 ],
+            "pickaxe_dig": [ 0, 10 ],
+            "hoe_dig": [ 0, 10 ],
+            "cut": [ 0, 10 ]
+        }
+    }
+]

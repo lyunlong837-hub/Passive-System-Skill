@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "EEE",
+    "ECE",
+    "EEE"
+  ],
+  "key": {
+    "E": {
+      "item": "minecraft:emerald"
+    },
+    "C": {
+      "item": "passivesystemskill:skill_crystal_piece"
+    }
+  },
+  "result": {
+    "item": "passivesystemskill:skill_crystal",
+    "count": 2
+  }
+}

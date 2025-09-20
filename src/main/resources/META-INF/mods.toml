@@ -1,0 +1,34 @@
+modLoader="javafml" # 固定写法
+loaderVersion="[47,)" # 对应 Forge 1.20.1，47.x 是 Forge 主版本
+license="MIT"
+
+[[mods]]
+modId="passivesystemskill"   # 必须和 @Mod("passivesystemskill") 一致
+version="0.5.0"
+displayName="熟练度系统"
+description="一个简单的 Forge 1.20.1 模组示例"
+
+# 在这里声明 Mixin
+[[mixins]]
+config = "passivesystemskill.mixins.json"
+
+[[dependencies.passivesystemskill]]
+    modId="irons_spellbooks"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.passivesystemskill]]
+    modId="farmersdelight"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.passivesystemskill]]
+    modId="tetra"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"

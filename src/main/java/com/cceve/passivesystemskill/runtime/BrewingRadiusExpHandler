@@ -1,0 +1,136 @@
+// package com.cceve.passivesystemskill.runtime;
+
+// import java.util.HashMap;
+// import java.util.Map;
+
+// import com.cceve.passivesystemskill.capability.PlayerVariables;
+// import com.cceve.passivesystemskill.capability.PlayerVariablesProvider;
+// import com.cceve.passivesystemskill.pss_main;
+
+// import net.minecraft.core.BlockPos;
+// import net.minecraft.server.level.ServerLevel;
+// import net.minecraft.server.level.ServerPlayer;
+// import net.minecraft.world.level.block.Blocks;
+// import net.minecraft.world.level.block.entity.BrewingStandBlockEnti // ✅ 正确事件
+// import net.minecraft.world.phys.AABB;
+// import net.minecraftforge.event.brewing.PlayerBrewedPotionEve
+// import net.minecraftforge.eventbus.api.SubscribeEvent;
+// import net.minecraftforge.fml.common.Mod;
+
+// @Mod.EventBusSubscriber(modid = pss_main.MODID, bus =
+// Mod.EventBusSubscriber.Bus.FORGE)
+// public final class BrewingRadiusExpHandler {
+
+// private BrewingRadiusExpHandler() {
+// }
+
+// private static final boolean DEBUG = true;
+
+// private static final double SEARCH_RADIUS = 4.0; // 从玩家位置搜索最近酿造台的半径
+// private static final double AWARD_RADIUS = 5.0; // 发经验半径
+// private static final int COOLDOWN_TICKS = 60; // 每个酿造台冷却（约3秒）
+
+// /** 维度+坐标 -> 上次结算 tick，用于冷却 */
+// private static final Map<String, Long> LAST_AWARD = new HashMap<>();
+
+// @SubscribeEvent
+// public static void onPlayerBrewed(PlayerBrewedPotionEvent e) {
+// if (!(e.getEntity() instanceof ServerPlayer sp))
+// return;
+// if (sp.isCreative() || sp.isSpectator())
+// return;
+
+// // 直接用玩家的世界
+// ServerLevel level = sp.serverLevel();
+// BlockPos playerPos = sp.blockPosition();
+
+// // 在玩家附近找最近酿造台
+// BlockPos standPos = findNearestBrewingStand(level, playerPos, (int)
+// Math.ceil(SEARCH_RADIUS));
+// if (standPos == null) {
+// if (DEBUG) {
+// System.out.println("[PSS DEBUG] No brewing stand near " + playerPos);
+// }
+// return;
+// }
+
+// // 冷却：同一酿造台短时间只发一次
+// String key = level.dimension().location() + "|" + standPos.asLong();
+// long now = level.getGameTime();
+// Long last = LAST_AWARD.get(key);
+// if (last != null && now - last < COOLDOWN_TICKS) {
+// if (DEBUG) {
+// System.out.println("[PSS DEBUG] Cooldown skip for " + standPos + ", dt=" +
+// (now - last));
+// }
+// return;
+// }
+// LAST_AWARD.put(key, now);
+
+// // 以酿造台为中心，半径内发经验
+// AABB box = new AABB(standPos).inflate(AWARD_RADIUS + 0.5);
+// int count = 0;
+// for (ServerPlayer p : level.getEntitiesOfClass(ServerPlayer.class, box,
+// pl -> !pl.isCreative() && !pl.isSpectator())) {
+
+// int gain = ExpFormula.calcRounded(p);
+// giveAlchemyExp(p, gain);
+
+// if (DEBUG) {
+// System.out.println("[PSS DEBUG] Award +" + gain + " to " +
+// p.getGameProfile().getName());
+// }
+// count++;
+// }
+
+// if (DEBUG) {
+// System.out.println("[PSS DEBUG] Awarded players count=" + count + " around "
+// + standPos);
+// }
+// }
+
+// private static BlockPos findNearestBrewingStand(ServerLevel level, BlockPos
+// center, int r) {
+// BlockPos best = null;
+// double bestD2 = Double.MAX_VALUE;
+// for (BlockPos pos : BlockPos.betweenClosed(center.offset(-r, -r, -r),
+// center.offset(r, r, r))) {
+// if (level.getBlockState(pos).is(Blocks.BREWING_STAND)
+// && level.getBlockEntity(pos) instanceof BrewingStandBlockEntity) {
+// double d2 = pos.distSqr(center);
+// if (d2 < bestD2) {
+// bestD2 = d2;
+// best = pos.immutable();
+// }
+// }
+// }
+// return best;
+// }
+
+// /** 你的“炼药(LianYao)”经验发放与升级规则 */
+// private static void giveAlchemyExp(ServerPlayer sp, int amount) {
+// if (amount <= 0)
+// return;
+// var vars = PlayerVariablesProvider.get(sp);
+// if (vars == null)
+// return;
+
+// var id = PlayerVariables.SkillId.LianYao;
+// var rec = vars.skillMap.get(id);
+// if (rec == null) {
+// rec = new PlayerVariables.SkillRecord(0, 0, 5);
+// vars.skillMap.put(id, rec);
+// }
+// if (rec.expNext <= 0)
+// rec.expNext = 5;
+
+// rec.expNow += amount;
+// while (rec.expNow >= rec.expNext) {
+// rec.expNow -= rec.expNext;
+// rec.level++;
+// rec.expNext = (int) Math.ceil(Math.pow(Math.max(1, rec.expNext), 1.3) + 5.0);
+// }
+
+// // 如需：ModNetwork.syncToClient(sp, vars);
+// }
+// }
